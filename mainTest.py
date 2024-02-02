@@ -3,7 +3,7 @@ import time
 import finished
 import sys
 import test  #post
-import auto
+import contacts
 import testfor_linkerror
  
 
@@ -22,9 +22,9 @@ while True:
         time.sleep(2)
         pyautogui.moveTo(905,469)
         pyautogui.scroll(1000)
-        auto.contact_scan()
+        contacts.contact_scan()
         break
-    
+
     elif(testfor_linkerror.check_fault_link()):
         testfor_linkerror.fault_link()
 

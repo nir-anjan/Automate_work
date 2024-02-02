@@ -38,7 +38,9 @@ def contact_scan():
         print("clicked:- contact info")
 
     time.sleep(10)
+    pyautogui.click()
     return
+
 
 
 
