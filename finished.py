@@ -5,7 +5,7 @@ import time
 def check_skip():
     try:
         x,y=0,0
-        x,y=pyautogui.locateCenterOnScreen("skip.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/skip.png")
         print("skip found")
         return x
     except:
@@ -17,7 +17,7 @@ def check_skip():
 def check_success():
     try:
         x,y=0,0
-        x,y=pyautogui.locateCenterOnScreen("success.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/success.png")
         print("success not found")
         return x
     except:
@@ -30,20 +30,20 @@ def wait_untill():
     try:
         while True:
             time.sleep(5)
-            x,y=pyautogui.locateCenterOnScreen("extracting_about.png")
+            x,y=pyautogui.locateCenterOnScreen("./image/extracting_about.png")
             print("Waiting for extracting_about")
     except:
         try:
             while True:
                 time.sleep(1)
-                x,y=pyautogui.locateCenterOnScreen("submitting.png")
+                x,y=pyautogui.locateCenterOnScreen("./image/submitting.png")
                 print("Waiting for submitting")
         except:
             return
 
-def click_link(): #success|
+def click_link(): #success|clicked|error
     try:
-        x,y=pyautogui.locateCenterOnScreen("link.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/link.png")
         pyautogui.moveTo(x,y)
         pyautogui.click(x,y)
         print("clicked on link:- click_link()")

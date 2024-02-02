@@ -22,7 +22,10 @@ def fault_link():
         except:
             print("page_not_exist not present ")
         if(x):
-            x,y=pyautogui.locateCenterOnScreen("./image/people_list.png")
+            try:
+                x,y=pyautogui.locateCenterOnScreen("./image/people_list.png")
+            except:
+                return
             pyautogui.click(x,y)
             print("clicked on people_lists")
             try:

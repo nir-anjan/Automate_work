@@ -4,22 +4,22 @@ import time
 def check_post():#checks for show all stuff
     try:
         while True:
-            x,y=pyautogui.locateCenterOnScreen("show_all_posts.png")
+            x,y=pyautogui.locateCenterOnScreen("./image/show_all_posts.png")
             return x,y
     except:
         try:
             while True:
-                x,y=pyautogui.locateCenterOnScreen("show_all_activity.png")
+                x,y=pyautogui.locateCenterOnScreen("./image/show_all_activity.png")
                 return x,y
         except:
             try:
                 while True:
-                    x,y=pyautogui.locateCenterOnScreen("show_all_comments.png")
+                    x,y=pyautogui.locateCenterOnScreen("./image/show_all_comments.png")
                     return x,y
             except:
                 try:
                     while True:
-                        x,y=pyautogui.locateCenterOnScreen("show_all_editions.png")
+                        x,y=pyautogui.locateCenterOnScreen("./image/show_all_editions.png")
                         return x,y
                 except:
                     print("post/activity/comments not found")
@@ -69,7 +69,7 @@ def check_post_tick():
     while True:
         try:
             x,y=0,0
-            x,y=pyautogui.locateCenterOnScreen("post_tick.png")
+            x,y=pyautogui.locateCenterOnScreen("./image/post_tick.png")
             return x,y
         except: 
             x,y=0,0
@@ -81,7 +81,7 @@ def scroll_untill_all():
         pyautogui.scroll(-500)
         try:
             if(check_post_tick()):
-                x,y=pyautogui.locateCenterOnScreen("back.png")
+                x,y=pyautogui.locateCenterOnScreen("./image/back.png")
                 pyautogui.moveTo(x,y)
                 pyautogui.click()
                 print("clicked on back")
@@ -94,13 +94,13 @@ def scroll_untill_all():
 def switch_to_post():
     time.sleep(2)
     try:
-        x,y=pyautogui.locateCenterOnScreen("post.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/post.png")
         pyautogui.moveTo(x,y)
         pyautogui.click()
         print("cilcked on post button")
         return
     except:
-        x,y=pyautogui.locateCenterOnScreen("greenpost.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/greenpost.png")
         pyautogui.moveTo(x,y)
         pyautogui.click()
         print("cilcked on green post button")
@@ -115,7 +115,7 @@ def post_scan():
 
     scroll()
     if(check_post_tick()):
-        x,y=pyautogui.locateCenterOnScreen("back.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/back.png")
         pyautogui.moveTo(x,y)
         pyautogui.click()
         print("clicked on back2")
