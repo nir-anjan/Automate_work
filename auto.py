@@ -6,7 +6,7 @@ def find_contact():
     while True :
         if(x==0):
             try:
-                x,y=pyautogui.locateCenterOnScreen("contact.png",confidence=0.8)
+                x,y=pyautogui.locateCenterOnScreen("./image/contact.png",confidence=0.8)
             except:
                 print("contact not found in page")
         else:
@@ -18,11 +18,11 @@ def find_connect():
     while True :
         if(x==0):
             try:
-                x,y=pyautogui.locateCenterOnScreen("connet1.png")
+                x,y=pyautogui.locateCenterOnScreen("./image/connet1.png")
             except:
                 print("connect1 not found in page")
                 try:
-                    x,y=pyautogui.locateCenterOnScreen("connet2.png")
+                    x,y=pyautogui.locateCenterOnScreen("./image/connet2.png")
                 except:
                     print("connect2 not found in page")
         else:

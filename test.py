@@ -40,7 +40,7 @@ def scroll_for_post(): #for the scroll post
             break
         else:
             pyautogui.click(x,y)
-            print("clicked on ----")
+            print("clicked on ---")
             return
             
     
