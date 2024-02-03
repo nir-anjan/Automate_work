@@ -1,10 +1,9 @@
 import pyautogui
 import time
-import finished
-import sys
-import post_functions  #post
-import contacts
-import testfor_linkerror
+import link_and_about_functions #functions for click link with condition 
+import post_functions   #functions for post section
+import contacts         #function for contactions 
+import testfor_linkerror    #function for page not found 
  
 
 
@@ -13,7 +12,7 @@ import testfor_linkerror
 time.sleep(2)
 count=0
 while True: 
-    resp=finished.click_link()
+    resp=link_and_about_functions.click_link()
     count+=1
     time.sleep(2)
     if( resp=="success"):
@@ -34,9 +33,4 @@ while True:
 
     if(count==20):
         break
-
-
-
-
-#post
-    
+  
