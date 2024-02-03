@@ -2,7 +2,7 @@ import pyautogui
 import time
 import finished
 import sys
-import test  #post
+import post_functions  #post
 import contacts
 import testfor_linkerror
  
@@ -18,7 +18,7 @@ while True:
     time.sleep(2)
     if( resp=="success"):
         print("code for success")
-        test.post_scan()
+        post_functions.post_scan()
         time.sleep(2)
         pyautogui.moveTo(905,469)
         pyautogui.scroll(1000)
