@@ -4,22 +4,22 @@ import time
 def check_post():#checks for show all stuff
     try:
         while True:
-            x,y=pyautogui.locateCenterOnScreen("./image/show_all_posts.png")
+            x,y=pyautogui.locateCenterOnScreen("./image/show_all_posts.png",confidence=0.8)
             return x,y
     except:
         try:
             while True:
-                x,y=pyautogui.locateCenterOnScreen("./image/show_all_activity.png")
+                x,y=pyautogui.locateCenterOnScreen("./image/show_all_activity.png",confidence=0.8)
                 return x,y
         except:
             try:
                 while True:
-                    x,y=pyautogui.locateCenterOnScreen("./image/show_all_comments.png")
+                    x,y=pyautogui.locateCenterOnScreen("./image/show_all_comments.png",confidence=0.8)
                     return x,y
             except:
                 try:
                     while True:
-                        x,y=pyautogui.locateCenterOnScreen("./image/show_all_editions.png")
+                        x,y=pyautogui.locateCenterOnScreen("./image/show_all_editions.png",confidence=0.8)
                         return x,y
                 except:
                     print("post/activity/comments not found")
@@ -94,13 +94,13 @@ def scroll_untill_all():
 def switch_to_post():
     time.sleep(2)
     try:
-        x,y=pyautogui.locateCenterOnScreen("./image/post.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/post.png",confidence=0.8)
         pyautogui.moveTo(x,y)
         pyautogui.click()
         print("cilcked on post button")
         return
     except:
-        x,y=pyautogui.locateCenterOnScreen("./image/greenpost.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/greenpost.png",confidence=0.8)
         pyautogui.moveTo(x,y)
         pyautogui.click()
         print("cilcked on green post button")
