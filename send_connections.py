@@ -35,6 +35,7 @@ def find_connect():
                         return x,y
                     except:
                         print("connect3 (in more button) not found in page")
+                        return x,y
         else:
             return x,y
         
@@ -86,17 +87,16 @@ def find_extracting_contacts():
                 return x,y
             except:
                 print("extracting_contacts  not found ")
-        else:
-            return x,y
+    
 
 def connect():
-    #time.sleep(2)
-    
-    if(find_extracting_contacts()):
-        pass
-    else:
+    time.sleep(2)
+    a,b=find_extracting_contacts()
+    print(a,b)
+    if(a):
         
-        if(find_sent_req()):
+        q,w=find_sent_req()
+        if(q):
             pyautogui.click()
             try:
                 x1,y1=find_connect()
@@ -133,11 +133,13 @@ def connect():
                         print("more not found")
             except:
                 print("connecton not send error ")
+    
+        
 
 
     return
 
 
-time.sleep(3)
-contacts.contact_scan()
-connect()
+# time.sleep(3)
+# contacts.contact_scan()
+# connect()

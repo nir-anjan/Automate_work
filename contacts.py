@@ -8,7 +8,7 @@ def find_contact():
             try:
                 x,y=pyautogui.locateCenterOnScreen("./image/contact.png",confidence=0.8)
             except:
-                print("contact not found in page")
+                print("ccontact not found in page")
         else:
             return x,y
 

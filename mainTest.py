@@ -13,7 +13,7 @@ time.sleep(2)
 count=0
 while True: 
     resp=link_and_about_functions.click_link()
-    count+=1
+    
     time.sleep(2)
     if( resp=="success"):
         print("code for success")
@@ -22,8 +22,12 @@ while True:
         pyautogui.moveTo(905,469)
         pyautogui.scroll(1000)
         contacts.contact_scan()
+        print("1")
         send_connections.connect()
-        break
+        print("2")
+        count+=1
+        time.sleep(1)
+        #break
 
     elif(testfor_linkerror.check_fault_link()):
         testfor_linkerror.fault_link()
@@ -32,6 +36,7 @@ while True:
         break
 
 
-    if(count==20):
+    if(count==5):
+        print(count)
         break
   
