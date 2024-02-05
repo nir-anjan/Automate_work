@@ -49,6 +49,7 @@ def click_link(): #success|clicked|error
         pyautogui.moveTo(x,y)
         pyautogui.click(x,y)
         print("clicked on link:- click_link()")
+        #time.sleep(6)
         pyautogui.moveTo(1668,308,1)
         pyautogui.click(1668,308)
         print("clicked on link ")

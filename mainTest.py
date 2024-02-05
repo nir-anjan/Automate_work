@@ -4,7 +4,7 @@ import link_and_about_functions #functions for click link with condition
 import post_functions   #functions for post section
 import contacts         #function for contactions 
 import testfor_linkerror    #function for page not found 
- 
+import send_connections
 
 
 
@@ -22,6 +22,7 @@ while True:
         pyautogui.moveTo(905,469)
         pyautogui.scroll(1000)
         contacts.contact_scan()
+        send_connections.connect()
         break
 
     elif(testfor_linkerror.check_fault_link()):
