@@ -6,7 +6,12 @@ import contacts         #function for contactions
 import testfor_linkerror    #function for page not found 
 import send_connections
 
-
+"""
+This Python script employs a while loop to execute various functions based on responses. It begins by sleeping for 2 seconds,
+then enters the loop, invoking click_link() from link_and_about_functions. On "success," it prints a success message and proceeds 
+with post scanning, scrolling, contact scanning, and connection sending. The loop breaks after successfully sending connection 
+requests five times (count==5)
+"""
 
 #main
 time.sleep(2)
