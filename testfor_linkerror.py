@@ -72,11 +72,30 @@ def fault_link():
                     time.sleep(2)
                     fault_link()
                     time.sleep(2)
+                # else:
+                #     break
             except:
                 print("e")
         else:
-            return
+            return x
 
 
-time.sleep(3)
-fault_link()
+
+def fault_link_2():
+    try:
+        x,y=pyautogui.locateCenterOnScreen("./image/people_list.png")
+    except:
+        return
+    pyautogui.click(x,y)
+    print("clicked on people_lists")
+
+    try:
+        x,y=pyautogui.locateCenterOnScreen("./image/link.png",confidence=0.8)
+        pyautogui.moveTo(x,y)
+        pyautogui.click(x,y)
+        pyautogui.moveTo(1668,308,1)
+        pyautogui.click(1668,308)
+        print("clicked on link")
+    except:
+        return
+    return

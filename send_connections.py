@@ -87,6 +87,7 @@ Note: PyAutoGUI and the specified image file are assumed to be available for the
 def find_send_without_note():
     x,y=0,0
     print("_send_without_note")
+    c=0
     while True :
         if(x==0):
             try:
@@ -94,9 +95,39 @@ def find_send_without_note():
                 return x,y
             except:
                 print("send_without_note button not found ")
+                c+=1
+                if(c==3):
+                    return x,y
+                   
+
         else:
             return x,y
 
+
+
+
+"""
+
+"""
+
+def find_send_button():
+    x,y=0,0
+    print("_send_button")
+    c=0
+    while True :
+        if(x==0):
+            try:
+                x,y=pyautogui.locateCenterOnScreen("./image/send_button.png",confidence=0.8)
+                return x,y
+            except:
+                print("send button not found ")
+                c+=1
+                if(c==3):
+                    return x,y
+                   
+
+        else:
+            return x,y
 
 """
 find_sent_req()
@@ -161,6 +192,7 @@ def find_extracting_contacts():
                 return x,y
             except:
                 print("extracting_contacts  not found ")
+
     
 """
 connect.py
@@ -180,7 +212,7 @@ Note: PyAutoGUI and the specified image files are assumed to be available for th
 def connect():
     time.sleep(2)
     a,b=find_extracting_contacts()
-    print(a,b)
+    #print(a,b)
     if(a):
         
         q,w=find_sent_req()
@@ -198,7 +230,16 @@ def connect():
                         pyautogui.click(x2,y2)
                         print("connection sent")
                     else:
-                        print("sent without a note button not found")
+                        
+                        x3,y3=find_send_button()
+                        if(x3):
+                            pyautogui.moveTo(x3,y3)
+                            pyautogui.click(x3,y3)
+                            print("connection sent")
+                        else:
+                            print("sent button not found")
+                            
+                        #print("sent without a note button not found")
                 else:
                     x1,y1=find_more()
                     if(x1):
@@ -211,12 +252,20 @@ def connect():
                             pyautogui.click(x2,y2)
                             time.sleep(2)
                         x3,y3=find_send_without_note()
+
                         if(x3):
                             pyautogui.moveTo(x3,y3)
                             pyautogui.click(x3,y3)
                             print("connection sent")
                         else:
                             print("sent without a note button not found")
+                            x3,y3=find_send_button()
+                            if(x3):
+                                pyautogui.moveTo(x3,y3)
+                                pyautogui.click(x3,y3)
+                                print("connection sent")
+                            else:
+                                print("sent button not found")
                     else:
                         print("more not found")
             except:
