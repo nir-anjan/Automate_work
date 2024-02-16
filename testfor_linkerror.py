@@ -24,7 +24,7 @@ def check_fault_link():
             return x
         except:
             x=0
-            print("page not found")
+            print("page not exist not found")
             #exit()
             return x
     
@@ -71,7 +71,7 @@ def fault_link():
                 if(res):
                     time.sleep(2)
                     fault_link()
-                    time.sleep(2)
+                    #time.sleep(2)
                 # else:
                 #     break
             except:

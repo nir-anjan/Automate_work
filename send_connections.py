@@ -268,6 +268,7 @@ def connect():
                                 print("sent button not found")
                     else:
                         print("more not found")
+                    pyautogui.click()
             except:
                 print("connecton not send error ")
 

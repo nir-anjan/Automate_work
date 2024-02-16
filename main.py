@@ -37,7 +37,7 @@ def check_skip():
 def check_success():
     try:
         x,y=0,0
-        time.sleep(2)                    #add if success not found or put a confidence of 0.8
+        #time.sleep(2)                    #add if success not found or put a confidence of 0.8
         x,y=pyautogui.locateCenterOnScreen("./image/success.png",confidence=0.8)
         #x,y=pyautogui.locateCenterOnScreen("./image/success_big.png",confidence=0.8)
         print("success found")
@@ -52,7 +52,7 @@ def check_success_2():
     try:
         while True :
             x,y=0,0
-            time.sleep(2)                    #add if success not found or put a confidence of 0.8
+            #time.sleep(2)                    #add if success not found or put a confidence of 0.8
             try:
                 
                 x,y=pyautogui.locateCenterOnScreen("./image/success.png",confidence=0.8)
@@ -75,7 +75,9 @@ def check_success_2():
 skip_count=0
 success_count=0
 faultLink_count=0
+total=0
 time.sleep(2)
+
 while True:
     link_and_about_functions.click_on_link()
     link_and_about_functions.wait_untill_new()
@@ -96,30 +98,28 @@ while True:
 
         contacts.contact_scan()
 
-        send_connections.connect()  
+        send_connections.connect()
+        pyautogui.moveTo(905,469)
+        pyautogui.click()
         
     else:
+        print("An Error occurred")
         total=skip_count+success_count
-        print()
-        print("An Error occurred \n \nTotal Profiles checked: ",total)
-        print("Total valid profiles: ",success_count)
-        print("Total Invalid profiles: ",skip_count)
-        print("Total Invalid links: ",faultLink_count)
-        print()
-        if(testfor_linkerror.check_fault_link()):
-            testfor_linkerror.fault_link_2()
-            faultLink_count+=1
-            
-        time.sleep(5)
-    
 
-    total=skip_count+success_count
     print()
-    print("An Error occurred \n \nTotal Profiles checked: ",total)
+    print(" \n \nTotal Profiles checked: ",total)
     print("Total valid profiles: ",success_count)
     print("Total Invalid profiles: ",skip_count)
     print("Total Invalid links: ",faultLink_count)
     print()
+    if(testfor_linkerror.check_fault_link()):
+        testfor_linkerror.fault_link_2()
+        faultLink_count+=1
+        
+   #g time.sleep(5)
+    
+
+    
     if(success_count==25):
         break
     

@@ -5,7 +5,7 @@ import pyautogui
 def check_skip():
     try:
         x,y=0,0
-        time.sleep(2)                     #add if success not found or put a confidence of 0.8
+        #time.sleep(2)                     #add if success not found or put a confidence of 0.8
         
         x,y=pyautogui.locateCenterOnScreen("./image/skip.png",confidence=0.8)
         print("skip found")
@@ -19,7 +19,7 @@ def check_skip():
 def check_success():
     try:
         x,y=0,0
-        time.sleep(2)                    #add if success not found or put a confidence of 0.8
+        #time.sleep(2)                    #add if success not found or put a confidence of 0.8
         x,y=pyautogui.locateCenterOnScreen("./image/success.png",confidence=0.8)
         #x,y=pyautogui.locateCenterOnScreen("./image/success_big.png",confidence=0.8)
         print("success found")
@@ -50,7 +50,7 @@ def check_success_2():
         #exit()
         return x 
 
-time.sleep(2)
-x=check_skip()
-if(x):
-    print("sndkjfhjs")
+# time.sleep(2)
+# x=check_skip()
+# if(x):
+#     print("sndkjfhjs")

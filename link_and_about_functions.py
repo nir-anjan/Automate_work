@@ -145,7 +145,7 @@ def click_on_link():
                         #print(x,y)
                         break   #code for no link
             time.sleep(1)
-            pyautogui.moveTo(1668,308,3)
+            pyautogui.moveTo(1668,308,1)
             pyautogui.click(1668,308)
             print("clicked on link ")
             wait_untill_new()
