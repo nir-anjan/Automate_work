@@ -2,6 +2,8 @@ import pyautogui
 import time
 import contacts
 
+import pyperclip
+
 
 """
 find_more()
@@ -278,3 +280,91 @@ def connect():
 # time.sleep(3)
 # contacts.contact_scan()
 # connect()
+
+
+def find_msg_button():
+    x,y=0,0
+    print("LOOOKING FOR MSG BTN")
+    c=0
+    while True :
+        if(x==0):
+            try:
+                x,y=pyautogui.locateCenterOnScreen("./image/msg.png",confidence=0.8)
+                return x,y
+            except:
+                print("msg button not found ")
+                c+=1
+                if(c==3):
+                    return x,y
+                   
+
+        else:
+            return x,y
+        
+def find_msg_snt_button():
+    x,y=0,0
+    print("LOOKING FOR send_button")
+    c=0
+    while True :
+        if(x==0):
+            try:
+                x,y=pyautogui.locateCenterOnScreen("./image/MSG_SND_BTN.png",confidence=0.8)
+                return x,y
+            except:
+                
+                print("msg snt button not found ")
+                c+=1
+                if(c==3):
+                    return x,y
+                   
+
+        else:
+            return x,y
+
+
+def find_msg_close_button():
+    x,y=0,0
+    print("LOOKING FOR send_close_button")
+    c=0
+    while True :
+        if(x==0):
+            try:
+                x,y=pyautogui.locateCenterOnScreen("./image/close_msg.png",confidence=0.8)
+                return x,y
+            except:
+                print("msg snt close button not found ")
+                c+=1
+                if(c==3):
+                    return x,y
+                   
+
+        else:
+            return x,y
+
+
+
+def send_msg():
+    t1="Hello,\n\nMy name is Niranjan , a seasoned Marketing professional passionate about talent development and organizational growth. Seeking to expand my network on LinkedIn, I'd love to connect and discuss industry trends and best practices. \nLet's exchange knowledge and experiences. Thank you, and I look forward to hearing from you.\n\nBest regards,\nNiranjan"
+    
+    try:
+        x,y=find_msg_button()
+        if(x):
+            pyautogui.click(x,y)
+            time.sleep(2)
+            pyautogui.click(1269,656)
+            pyperclip.copy(t1)
+            pyautogui.hotkey('ctrl', 'v')
+            x,y=find_msg_snt_button()
+            if(x):
+                pyautogui.click(x,y)
+                time.sleep(2)
+
+                x,y=find_msg_close_button()
+                if(x):
+                    pyautogui.click(x,y)
+                    print("msg sent successfully")
+                    time.sleep(2)
+    except:
+        print("error in sending msg")
+        return
+        

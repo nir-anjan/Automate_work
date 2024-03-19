@@ -213,7 +213,7 @@ def post_scan():
 
     scroll()
     if(check_post_tick()):
-        x,y=pyautogui.locateCenterOnScreen("./image/back.png")
+        x,y=pyautogui.locateCenterOnScreen("./image/back.png",confidence=0.8)
         pyautogui.moveTo(x,y)
         pyautogui.click()
         print("clicked on back2")

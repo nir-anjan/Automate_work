@@ -99,8 +99,11 @@ while True:
         contacts.contact_scan()
 
         send_connections.connect()
+
         pyautogui.moveTo(905,469)
         pyautogui.click()
+
+        send_connections.send_msg()
         
     else:
         print("An Error occurred")
@@ -113,6 +116,7 @@ while True:
     print("Total Invalid links: ",faultLink_count)
     print()
     if(testfor_linkerror.check_fault_link()):
+        
         testfor_linkerror.fault_link_2()
         faultLink_count+=1
         
@@ -120,6 +124,6 @@ while True:
     
 
     
-    if(success_count==25):
+    if(success_count==3):
         break
     

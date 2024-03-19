@@ -84,6 +84,7 @@ def fault_link():
 def fault_link_2():
     try:
         x,y=pyautogui.locateCenterOnScreen("./image/people_list.png")
+        time.sleep(60)
     except:
         return
     pyautogui.click(x,y)
